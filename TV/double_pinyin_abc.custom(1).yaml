@@ -1,0 +1,63 @@
+customization:
+  distribution_code_name: Hamster
+  distribution_version: 81
+  generator: "Rime::SwitcherSettings"
+  modified_time: "Wed Sep  6 17:31:24 2023"
+  rime_version: 1.8.5
+patch:
+  date_translator:
+    date: rq            # 日期： 2022-11-29
+    time: sj            # 时间： 18:13
+    week: xq            # 星期： 星期二
+    datetime: dt    # ISO 8601： 2022-11-29T18:13:11+08:00
+    timestamp: ts  # 时间戳： 1669716794
+
+# 输入双拼码的时候不转化为全拼码
+  translator/preedit_format: {}
+
+  custom_phrase/user_dict: custom_phrase_double
+
+  engine/translators:
+    - punct_translator
+    - script_translator
+    - lua_translator@date_translator      # 时间、日期、星期
+    - table_translator@custom_phrase_double      # 自定义短语 custom_phrase_double.txt
+    - table_translator@custom_phrase      # 自定义短语 custom_phrase_double.txt
+    - table_translator@melt_eng           # 英文输入
+    - reverse_lookup_translator@liangfen  # 反查，两分拼字
+    - lua_translator@unicode              # Unicode
+    - lua_translator@number_translator    # 数字、金额大写
+
+  punctuator/half_shape:
+    ',' : ','
+    '.' : '.'
+    '<' : '<'
+    '>' : '>'
+    '/' : '/'
+    '?' : '?'
+    ';' : ';'
+    ':' : ':'
+    "'" : "'"
+    '"' : '"'
+    '\' : '\'
+    '|' : '|'
+    '`' : '`'
+    '~' : '~'
+    '!' : '!'
+    '@' : '@'
+    '#' : '#'
+    '%' : '%'
+    '$' : '$'
+    '^' : '^'
+    '&' : '&'
+    '*' : '*'
+    '(' : '('
+    ')' : ')'
+    '-' : '-'
+    '_' : '_'
+    '+' : '+'
+    '=' : '='
+    '[' : '['
+    ']' : ']'
+    '{' : '{'
+    '}' : '}'
